@@ -1,0 +1,41 @@
+﻿@model IEnumerable<DreamDayWeddingPlanningManagementSystem.Models.BudgetItem>
+
+@{
+    ViewData["Title"] = "Budget Tracker";
+    Layout = "_Layout";
+
+    var total = Model.Sum(item => item.Amount);
+}
+
+<div class="container py-5">
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold mb-0">💰 Budget Tracker</h2>
+                <span class="badge bg-primary fs-6 p-2 px-3 rounded-pill">
+                    Total: Rs. @total.ToString("N2")
+                </span>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Category</th>
+                            <th class="text-end">Amount (Rs.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Category</td>
+                                <td class="text-end">Rs. @item.Amount.ToString("N2")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

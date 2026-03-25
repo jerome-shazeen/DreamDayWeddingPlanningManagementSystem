@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "_Layout";
+}
+
+<div class="container py-5">
+    <!-- Welcome Section -->
+    <div class="card shadow border-0 mb-5 rounded-4">
+        <div class="card-body text-center py-5">
+            <h1 class="fw-bold mb-3">Welcome to Your Dashboard</h1>
+            <p class="text-muted mb-4 fs-5">
+                Manage your wedding plans, tasks, guests, budget, and timeline all in one place.
+            </p>
+            <a href='@Url.Action("Index", "Wedding")' class="btn btn-dark btn-lg rounded-pill px-5">View Wedding Plan</a>
+        </div>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="row g-4">
+        <!-- Tasks -->
+        <div class="col-md-6 col-xl-3">
+            <div class="card h-100 border-0 shadow rounded-4">
+                <div class="card-body text-center">
+                    <div class="mb-3 fs-2">✅</div>
+                    <h5 class="fw-bold">Tasks</h5>
+                    <p class="text-muted">10 pending tasks</p>
+                    <a href='@Url.Action("Index", "Checklist")' class="btn btn-outline-dark btn-sm rounded-pill">Manage Tasks</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guests -->
+        <div class="col-md-6 col-xl-3">
+            <div class="card h-100 border-0 shadow rounded-4">
+                <div class="card-body text-center">
+                    <div class="mb-3 fs-2">👥</div>
+                    <h5 class="fw-bold">Guests</h5>
+                    <p class="text-muted">50 guests invited</p>
+                    <a href='@Url.Action("Index", "Guest")' class="btn btn-outline-dark btn-sm rounded-pill">Manage Guests</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Budget -->
+        <div class="col-md-6 col-xl-3">
+            <div class="card h-100 border-0 shadow rounded-4">
+                <div class="card-body text-center">
+                    <div class="mb-3 fs-2">💰</div>
+                    <h5 class="fw-bold">Budget</h5>
+                    <p class="text-muted">$10,000 spent</p>
+                    <a href='@Url.Action("Index", "Budget")' class="btn btn-outline-dark btn-sm rounded-pill">View Budget</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="col-md-6 col-xl-3">
+            <div class="card h-100 border-0 shadow rounded-4">
+                <div class="card-body text-center">
+                    <div class="mb-3 fs-2">🕒</div>
+                    <h5 class="fw-bold">Timeline</h5>
+                    <p class="text-muted">5 events scheduled</p>
+                    <a href='@Url.Action("Index", "Timeline")' class="btn btn-outline-dark btn-sm rounded-pill">View Timeline</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

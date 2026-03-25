@@ -1,0 +1,71 @@
+﻿@model DreamDayWeddingPlanningManagementSystem.Models.Wedding
+
+@{
+    ViewData["Title"] = "Wedding Dashboard";
+    Layout = "_Layout";
+}
+
+<div class="container mt-5">
+    @if (Model == null)
+    {
+        <div class="alert alert-warning">
+            No wedding plan found. Please create your wedding plan.
+        </div>
+    }
+    else
+    {
+        <div class="mb-4">
+            <h1>@Model.Title</h1>
+            <p class="lead">
+                Date: @Model.WeddingDate.ToString("MMMM dd, yyyy")<br />
+                Venue: @Model.Venue
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 mb-3">
+                <div class="card text-white bg-info">
+                    <div class="card-body">
+                        <h5 class="card-title">Tasks</h5>
+                        <p class="card-text">
+                            @(Model.ChecklistItems != null ? Model.ChecklistItems.Count() : 0) tasks
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <div class="card text-white bg-success">
+                    <div class="card-body">
+                        <h5 class="card-title">Guests</h5>
+                        <p class="card-text">
+                            @(Model.Guests != null ? Model.Guests.Count() : 0) guests
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <div class="card text-white bg-warning">
+                    <div class="card-body">
+                        <h5 class="card-title">Budget Items</h5>
+                        <p class="card-text">
+                            @(Model.BudgetItems != null ? Model.BudgetItems.Count() : 0) items
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <div class="card text-white bg-danger">
+                    <div class="card-body">
+                        <h5 class="card-title">Timeline Events</h5>
+                        <p class="card-text">
+                            @(Model.TimelineEvents != null ? Model.TimelineEvents.Count() : 0) events
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

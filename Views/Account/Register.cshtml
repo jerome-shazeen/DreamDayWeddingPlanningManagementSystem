@@ -1,0 +1,57 @@
+﻿@model DreamDayWeddingPlanningManagementSystem.Models.User
+
+@{
+    ViewData["Title"] = "Couple Registration";
+    Layout = "_Layout";
+}
+
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    <div class="card shadow-lg border-0 rounded-4" style="width: 100%; max-width: 550px;">
+        <!-- Header -->
+        <div class="card-header bg-dark text-white text-center rounded-top-4 py-4">
+            <h2 class="mb-1 fw-bold">Register as a Couple</h2>
+            <p class="mb-0 small text-light">Create your account to start planning your perfect wedding</p>
+        </div>
+
+        <!-- Body -->
+        <div class="card-body p-4 bg-white">
+            <form asp-action="Register" method="post">
+                @Html.AntiForgeryToken()
+
+                <div class="mb-3">
+                    <label for="FullName" class="form-label fw-semibold">Full Name</label>
+                    <input asp-for="FullName" class="form-control rounded-3" id="FullName" name="FullName" placeholder="Enter your full name" />
+                    <span asp-validation-for="FullName" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="Email" class="form-label fw-semibold">Email Address</label>
+                    <input asp-for="Email" class="form-control rounded-3" id="Email" name="Email" type="email" placeholder="you@example.com" autocomplete="email" />
+                    <span asp-validation-for="Email" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label for="Password" class="form-label fw-semibold">Password</label>
+                    <input asp-for="Password" class="form-control rounded-3" id="Password" name="Password" type="password" placeholder="Enter a password" autocomplete="new-password" />
+                    <span asp-validation-for="Password" class="text-danger small"></span>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-dark btn-lg rounded-3">Register</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <div class="card-footer bg-light text-center rounded-bottom-4 py-3">
+            <small class="text-muted">
+                Already have an account?
+                <a asp-controller="Account" asp-action="Login" class="fw-semibold text-decoration-none">Login here</a>
+            </small>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Vendor Dashboard";
+    Layout = "_Layout";
+}
+
+<div class="container py-5">
+    <!-- Welcome Card -->
+    <div class="card shadow-sm border-0 mb-5 rounded-4 bg-light">
+        <div class="card-body text-center py-5">
+            <h2 class="fw-bold mb-3">👋 Welcome, Vendor!</h2>
+            <p class="text-muted fs-5">
+                You’re logged in and ready to manage your profile, services, and upcoming bookings.
+            </p>
+            <a href="#" class="btn btn-dark rounded-pill px-4 mt-3">Edit Your Profile</a>
+        </div>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="row g-4 mb-5">
+        <div class="col-md-6 col-lg-4">
+            <div class="card text-center shadow-sm border-0 rounded-4 h-100">
+                <div class="card-body py-4">
+                    <div class="fs-1 mb-2">📦</div>
+                    <h5 class="fw-bold">My Services</h5>
+                    <p class="text-muted">Manage packages you offer to couples.</p>
+                    <a href="@Url.Action("Index", "VendorService")" class="btn btn-outline-dark btn-sm rounded-pill">Manage Services</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card text-center shadow-sm border-0 rounded-4 h-100">
+                <div class="card-body py-4">
+                    <div class="fs-1 mb-2">📅</div>
+                    <h5 class="fw-bold">Bookings</h5>
+                    <p class="text-muted">View and respond to couple bookings.</p>
+                    <a href="@Url.Action("Index", "VendorBookings")" class="btn btn-outline-dark btn-sm rounded-pill">View Bookings</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card text-center shadow-sm border-0 rounded-4 h-100">
+                <div class="card-body py-4">
+                    <div class="fs-1 mb-2">💬</div>
+                    <h5 class="fw-bold">Messages</h5>
+                    <p class="text-muted">Check messages from interested couples.</p>
+                    <a href="#" class="btn btn-outline-dark btn-sm rounded-pill">View Messages</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analytics Placeholder -->
+    <div class="card shadow-sm border-0 rounded-4 p-4">
+        <h5 class="fw-bold mb-3">📈 Vendor Insights (Coming Soon)</h5>
+        <div class="text-muted text-center py-4">
+            <em>This section will display your booking stats, feedback, and engagement analytics.</em>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
+}
+
+<section class="landing-hero full-height d-flex align-items-center bg-white">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+        <!-- Text Section -->
+        <div class="text-section text-center text-md-start mb-5 mb-md-0">
+            <span class="badge bg-light text-dark mb-3 fw-semibold">Wedding Planning Made Simple</span>
+            <h1 class="display-5 fw-bold mb-4">Welcome to DreamDay</h1>
+            <p class="text-muted lead mb-5">
+                Plan your dream wedding with ease. Manage guests, vendors, checklists and more—all in one place.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3">
+                <a class="btn btn-outline-dark btn-lg px-4" href='@Url.Action("Register", "Vendor")'>Vendor Registration</a>
+                <a class="btn btn-dark btn-lg px-4" href='@Url.Action("Login", "Vendor")'>Vendor Login</a>
+                <a class="btn btn-outline-dark btn-lg px-4" href='@Url.Action("Register", "Account")'>Couple Registration</a>
+                <a class="btn btn-dark btn-lg px-4" href='@Url.Action("Login", "Account")'>Couple Login</a>
+            </div>
+        </div>
+
+        <!-- Image Section -->
+        <div class="image-section text-center">
+            <img src="~/images/wedding-graphic.png" alt="Wedding Planner" class="img-fluid" style="max-width: 400px;" />
+        </div>
+    </div>
+</section>

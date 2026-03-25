@@ -1,0 +1,178 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+.text-pink {
+    color: #e83e8c !important;
+}
+
+.border-pink {
+    border-color: #ffc0cb !important;
+}
+
+.navbar-nav .nav-link {
+    transition: all 0.2s ease-in-out;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: #e83e8c !important;
+        text-decoration: underline;
+    }
+
+footer a:hover {
+    color: #fff !important;
+    text-decoration: underline;
+}
+
+.hero-section {
+    background: url('/images/image.png') no-repeat center center;
+    background-size: cover;
+    padding: 120px 0;
+    position: relative;
+}
+
+    .hero-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5); 
+        z-index: 1;
+    }
+
+    .hero-section .container {
+        position: relative;
+        z-index: 2;
+    }
+
+.text-accent {
+    color: #f0c36d; 
+}
+
+.hero-section .btn {
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+.full-height {
+    height: 100vh;
+    min-height: 600px;
+}
+
+.landing-hero {
+    background-color: white;
+    padding: 60px 0;
+}
+
+    .landing-hero h1 {
+        color: #111;
+        line-height: 1.2;
+    }
+
+    .landing-hero p {
+        color: #555;
+    }
+
+.btn-outline-dark {
+    border-radius: 10px;
+    font-weight: 500;
+    border: 2px solid #333;
+    color: #333;
+}
+
+    .btn-outline-dark:hover {
+        background-color: #333;
+        color: #fff;
+    }
+
+.btn-dark {
+    background-color: #333;
+    border-radius: 10px;
+    font-weight: 500;
+    border: none;
+}
+
+.btn-dark:hover {
+    background-color: #000;
+}
+
+.card input.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 87, 217, 0.2);
+    border-color: #0057d9;
+}
+
+
+.card input.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.2); /* green success shadow */
+    border-color: #198754;
+}
+
+.card .btn-outline-dark:hover {
+    background-color: #111;
+    color: #fff;
+}
+
+.card .fs-2 {
+    line-height: 1;
+}
+
+.progress {
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    font-weight: 600;
+}
+.table td, .table th {
+    vertical-align: middle;
+}
+
+.badge {
+    font-size: 0.9rem;
+}
+.table td, .table th {
+    vertical-align: middle;
+}
+
+    .table td.text-end {
+        font-weight: 500;
+    }
+.card h5 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.card .btn-sm {
+    font-weight: 500;
+}
+
+
+
+

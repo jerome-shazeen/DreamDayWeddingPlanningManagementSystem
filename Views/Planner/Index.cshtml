@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DreamDayWeddingPlanningManagementSystem.Models.Wedding>
+
+@{
+    ViewData["Title"] = "Planner Dashboard";
+    Layout = "_Layout";
+}
+
+<div class="container py-5">
+    <h2 class="fw-bold mb-4">📋 Planner Dashboard</h2>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-warning">No wedding plans assigned yet.</div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var wedding in Model)
+            {
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body">
+                            <h5 class="fw-bold">@wedding.Title</h5>
+                            <p class="text-muted mb-2">
+                                <i class="bi bi-calendar-event"></i>
+                                <strong>Date:</strong> @wedding.WeddingDate.ToString("MMMM dd, yyyy")
+                            </p>
+                            <p class="text-muted mb-4">
+                                <i class="bi bi-geo-alt"></i>
+                                <strong>Venue:</strong> @wedding.Venue
+                            </p>
+                            <a href="@Url.Action("Details", "Wedding", new { id = wedding.WeddingId })" class="btn btn-outline-dark btn-sm rounded-pill">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

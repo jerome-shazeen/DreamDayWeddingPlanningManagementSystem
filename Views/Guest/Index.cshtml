@@ -1,0 +1,53 @@
+﻿@using DreamDayWeddingPlanningManagementSystem.Models
+@model IEnumerable<Guest>
+
+@{
+    ViewData["Title"] = "Guest List";
+    Layout = "_Layout";
+
+    // Dummy data (for UI display/testing only)
+    var guestList = new List<Guest>
+    {
+        new Guest { Name = "Nuwan Perera", Email = "nuwan.perera@example.com", RSVP = true },
+        new Guest { Name = "Dilani Fernando", Email = "dilani.fernando@example.com", RSVP = false },
+        new Guest { Name = "Sajith Gunasekara", Email = "sajithg@gmail.com", RSVP = true },
+        new Guest { Name = "Tharushi Jayasinghe", Email = "tharushi.j@example.com", RSVP = true },
+        new Guest { Name = "Ramesh De Silva", Email = "ramesh.d@example.com", RSVP = false },
+        new Guest { Name = "Kavindi Wickramasinghe", Email = "kavindi.wick@example.com", RSVP = true }
+    };
+}
+
+<div class="container py-5">
+    <h2 class="fw-bold mb-4">Guest List</h2>
+
+    <div class="table-responsive shadow-sm rounded">
+        <table class="table table-striped align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">RSVP</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var guest in guestList)
+                {
+                    <tr>
+                        <td>@guest.Name</td>
+                        <td>@guest.Email</td>
+                        <td>
+                            @if (guest.RSVP)
+                            {
+                                <span class="badge bg-success rounded-pill px-3 py-2">✔️ Yes</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary rounded-pill px-3 py-2">❌ No</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

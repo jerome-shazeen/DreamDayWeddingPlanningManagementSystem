@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DreamDay Wedding Planner Management System</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <!-- Centered Elegant Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 border-bottom border-pink">
+            <div class="container d-flex flex-column align-items-center">
+                <!-- Brand -->
+                <a class="navbar-brand fw-bold fs-3 text-pink mb-2" asp-controller="Home" asp-action="Index">
+                    DreamDay
+                </a>
+
+                <!-- Toggle for mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar Links -->
+                <div class="collapse navbar-collapse justify-content-center text-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0 gap-3 text-uppercase fw-semibold">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="WeddingPlans" asp-action="Index">Wedding Plans</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Guest" asp-action="Index">Guests</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="VendorBookings" asp-action="Index">Bookings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="TaskItems" asp-action="Index">Tasks</a>
+                            </li>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Users" asp-action="Index">Users</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Vendors" asp-action="Index">Vendors</a>
+                                </li>
+                            }
+                        }
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Vendor" asp-action="Register">Vendor Registration</a>
+                        </li>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <span class="navbar-text text-muted">Hello, @User.Identity.Name!</span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Logout">Logout</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Admin" asp-action="Login">Admin Login</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="bg-dark text-white pt-5 pb-4 mt-5 border-top">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <!-- Brand Info -->
+                <div class="col-md-4 mb-4">
+                    <h4 class="fw-bold text-white">DreamDay</h4>
+                    <p class="text-light small">
+                        DreamDay helps you plan your perfect wedding—from venue bookings to guest management, all in one place.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-4 mb-4">
+                    <h6 class="fw-semibold text-white mb-3">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li><a class="text-light text-decoration-none d-block mb-1" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a class="text-light text-decoration-none d-block mb-1" asp-controller="WeddingPlans" asp-action="Index">Wedding Plans</a></li>
+                        <li><a class="text-light text-decoration-none d-block mb-1" asp-controller="Guest" asp-action="Index">Guests</a></li>
+                        <li><a class="text-light text-decoration-none d-block mb-1" asp-controller="VendorBookings" asp-action="Index">Bookings</a></li>
+                        <li><a class="text-light text-decoration-none d-block mb-1" asp-controller="TaskItems" asp-action="Index">Tasks</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-md-4 mb-4">
+                    <h6 class="fw-semibold text-white mb-3">Contact</h6>
+                    <ul class="list-unstyled small text-light">
+                        <li class="mb-1">📍 Colombo, Sri Lanka</li>
+                        <li class="mb-1">📞 +94 77 123 4567</li>
+                        <li class="mb-1">✉️ support@dreamday.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-light opacity-25" />
+
+            <div class="text-center text-muted small">
+                &copy; 2025 DreamDay Wedding Planner. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
